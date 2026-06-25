@@ -18,17 +18,13 @@ const __dirname = path.resolve();
 // middleware
 app.use(express.json());
 // credentials:true meaning?? => server allows a browser to include cookies on request
-const allowedOrigins = [
-  'https://talent-iq-harsh-rj.vercel.app',
-  'https://talent-iq-orcin-five.vercel.app',
-  'https://talent-iq-pwkv0s1n8-harsh-rj.vercel.app',
-  'https://talent-iq-git-main-harsh-rj.vercel.app',  // ← add this
-  'http://localhost:5173'
-]
+
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (!origin || 
+        origin.endsWith('.vercel.app') || 
+        origin === 'http://localhost:5173') {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
