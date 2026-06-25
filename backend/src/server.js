@@ -22,7 +22,8 @@ const allowedOrigins = [
   'https://talent-iq-harsh-rj.vercel.app',
   'https://talent-iq-orcin-five.vercel.app',
   'https://talent-iq-pwkv0s1n8-harsh-rj.vercel.app',
-  'http://localhost:5173'  // keep for local dev
+  'https://talent-iq-git-main-harsh-rj.vercel.app',  // ← add this
+  'http://localhost:5173'
 ]
 
 app.use(cors({
